@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane styleClass="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Enter_BidController">
+   <children>
+      <TextField fx:id="bid_amount" layoutX="62.0" layoutY="160.0" />
+      <Button fx:id="button_bid" layoutX="238.0" layoutY="160.0" mnemonicParsing="false" onAction="#Enter_Bid" text="Bid" />
+      <Button fx:id="button_buyout" layoutX="300.0" layoutY="160.0" mnemonicParsing="false" text="Buyout" />
+      <Label layoutX="62.0" layoutY="213.0" text="Active bid days" />
+      <Label layoutX="229.0" layoutY="213.0" text="Days" />
+      <ChoiceBox fx:id="nb_of_days" layoutX="168.0" layoutY="209.0" prefHeight="25.0" prefWidth="54.0" />
+      <Button fx:id="Display_list" layoutX="439.0" layoutY="74.0" mnemonicParsing="false" onAction="#list_display" text="Display List" />
+      <Button layoutX="562.0" layoutY="14.0" mnemonicParsing="false" onAction="#app_close" text="X" />
+   </children>
+   <stylesheets>
+      <URL value="@../Style/style.css" />
+      <URL value="@../Style/styleTextField.css" />
+   </stylesheets>
+</AnchorPane>

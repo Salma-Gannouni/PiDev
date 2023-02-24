@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Forsa_touaad/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://E:/Users/asus/Documents/javafx-sdk-19.0.2.1/lib/javafx-swt.jar!/" />
+          <root url="jar://E:/Users/asus/Documents/javafx-sdk-19.0.2.1/lib/javafx.base.jar!/" />
+          <root url="jar://E:/Users/asus/Documents/javafx-sdk-19.0.2.1/lib/javafx.controls.jar!/" />
+          <root url="jar://E:/Users/asus/Documents/javafx-sdk-19.0.2.1/lib/javafx.fxml.jar!/" />
+          <root url="jar://E:/Users/asus/Documents/javafx-sdk-19.0.2.1/lib/javafx.graphics.jar!/" />
+          <root url="jar://E:/Users/asus/Documents/javafx-sdk-19.0.2.1/lib/javafx.media.jar!/" />
+          <root url="jar://E:/Users/asus/Documents/javafx-sdk-19.0.2.1/lib/javafx.swing.jar!/" />
+          <root url="jar://E:/Users/asus/Documents/javafx-sdk-19.0.2.1/lib/javafx.web.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://E:/Users/asus/Documents/javafx-sdk-19.0.2.1" />
+        </SOURCES>
+        <jarDirectory url="file://E:/Users/asus/Documents/javafx-sdk-19.0.2.1" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/mysql-connector-java-8.0.22.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.22" level="project" />
+  </component>
+</module>

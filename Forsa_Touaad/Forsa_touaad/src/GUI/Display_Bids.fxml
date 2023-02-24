@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="AnchorPane" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DisplayBidsController">
+   <children>
+      <Button layoutX="25.0" layoutY="348.0" mnemonicParsing="false" onAction="#go_back" prefHeight="16.0" prefWidth="62.0" text="Go Back" />
+      <TableView fx:id="list_bids" layoutX="110.0" layoutY="13.0" prefHeight="368.0" prefWidth="471.0">
+        <columns>
+          <TableColumn fx:id="id_bid_col" prefWidth="75.0" text="id_bid" />
+          <TableColumn fx:id="bid_amount_col" prefWidth="75.0" text="bid_amount" />
+          <TableColumn fx:id="entry_date_col" prefWidth="75.0" text="entry_date" />
+          <TableColumn fx:id="entry_time_col" prefWidth="75.0" text="entry_time" />
+          <TableColumn fx:id="active_duration_col" prefWidth="96.0" text="active_duration" />
+          <TableColumn fx:id="type_col" prefWidth="73.0" text="type" />
+        </columns>
+      </TableView>
+       <Button layoutX="562.0" layoutY="14.0" mnemonicParsing="false" onAction="#app_close" text="X" />
+   </children>
+   <stylesheets>
+      <URL value="@../Style/style.css" />
+      <URL value="@../Style/styleTextField.css" />
+   </stylesheets>
+</AnchorPane>
