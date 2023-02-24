@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterLivraisonController">
+    <stylesheets>
+        <URL value="@ajouterlivraison.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="193.0" layoutY="14.0" text="Ajouter Livraison">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nomTf" layoutX="67.0" layoutY="135.0" prefHeight="30.0" prefWidth="151.0" promptText="nom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="etatTV" layoutX="67.0" layoutY="237.0" promptText="etat" />
+      <TextField fx:id="adresseTv" layoutX="67.0" layoutY="187.0" promptText="adresse" />
+      <TextField fx:id="idProdTv" layoutX="67.0" layoutY="278.0" promptText="id-produit" />
+      <Button fx:id="btn" layoutX="380.0" layoutY="135.0" mnemonicParsing="false" onAction="#ajout" prefHeight="30.0" prefWidth="144.0" text="Ajouter" />
+      <Button fx:id="btnAffiche" layoutX="380.0" layoutY="263.0" mnemonicParsing="false" onAction="#Afficher" prefHeight="30.0" prefWidth="144.0" text="Afficher" />
+   </children>
+</AnchorPane>

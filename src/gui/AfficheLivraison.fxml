@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficheLivraisonController">
+    <stylesheets>
+        <URL value="@affichelivraison.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="189.0" layoutY="14.0" text="Affiche Livraisons">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TableView fx:id="livraisonTv" layoutX="13.0" layoutY="63.0" prefHeight="254.0" prefWidth="573.0">
+        <columns>
+          <TableColumn fx:id="idTv" prefWidth="90.4000244140625" text="id" />
+          <TableColumn fx:id="nomTv" prefWidth="86.39996337890625" text="nom" />
+            <TableColumn fx:id="adresseTv" prefWidth="104.0" text="adresse" />
+            <TableColumn fx:id="etatTv" prefWidth="130.39996337890625" text="etat" />
+            <TableColumn fx:id="idProTv" prefWidth="161.60003662109375" text="id_produit" />
+        </columns>
+      </TableView>
+      <Button layoutX="266.0" layoutY="331.0" mnemonicParsing="false" onAction="#delete" text="Supprimer" />
+   </children>
+</AnchorPane>
