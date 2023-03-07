@@ -9,51 +9,63 @@ package entities;
  * @author asus
  */
 public class Livraison {
-    private int id,id_produit;
-    private String nom,adresse,etat;
+    private int id,id_produit,id_user,id_livreur;
+    private String adresse,etat,num;
 
     public Livraison() {
     }
 
-    public Livraison(int id, int id_produit, String nom, String adresse, String etat) {
+    public Livraison(int id, int id_produit, int id_user, int id_livreur, String adresse, String etat, String num) {
         this.id = id;
         this.id_produit = id_produit;
-        this.nom = nom;
+        this.id_user = id_user;
+        this.id_livreur = id_livreur;
         this.adresse = adresse;
         this.etat = etat;
+        this.num = num;
     }
 
-  /**  public Livraison(String nom, String adresse, String etat) {
-        this.nom = nom;
-        this.adresse = adresse;
-        this.etat = etat;
-    }**/
-
-    public Livraison(int id_produit, String nom, String adresse, String etat) {
+    public Livraison(int id_produit, int id_user, int id_livreur, String adresse, String etat, String num) {
         this.id_produit = id_produit;
-        this.nom = nom;
+        this.id_user = id_user;
+        this.id_livreur = id_livreur;
         this.adresse = adresse;
         this.etat = etat;
+        this.num = num;
     }
-
-  
-
-  
-
+ 
     public int getId() {
         return id;
     }
+
+   
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public int getId_produit() {
+        return id_produit;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setId_produit(int id_produit) {
+        this.id_produit = id_produit;
+    }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    public int getId_livreur() {
+        return id_livreur;
+    }
+
+    public void setId_livreur(int id_livreur) {
+        this.id_livreur = id_livreur;
     }
 
     public String getAdresse() {
@@ -72,22 +84,17 @@ public class Livraison {
         this.etat = etat;
     }
 
-    public int getId_produit() {
-        return id_produit;
+    public String getNum() {
+        return num;
     }
 
-    public void setId_produit(int id_produit) {
-        this.id_produit = id_produit;
+    public void setNum(String num) {
+        this.num = num;
     }
 
     @Override
     public String toString() {
-        return "Livraison{" + "id=" + id + ", id_produit=" + id_produit + ", nom=" + nom + ", adresse=" + adresse + ", etat=" + etat + '}';
+        return "Livraison{" + "id=" + id + ", id_produit=" + id_produit + ", id_user=" + id_user + ", id_livreur=" + id_livreur + ", adresse=" + adresse + ", etat=" + etat + ", num=" + num + '}';
     }
 
-
-
-   
-    
-    
 }

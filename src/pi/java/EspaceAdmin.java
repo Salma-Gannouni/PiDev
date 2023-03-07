@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -14,33 +14,39 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import test.DBConnection;
 
 /**
  *
  * @author love2
  */
-public class MainAjouter extends Application {
+public class EspaceAdmin extends Application {
 
-    @Override
-    public void start(Stage primaryStage) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AjouterLivraison.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root,600,400);
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("ajouter livraison");
-            primaryStage.show();
 
-        } catch (IOException ex) {
-            System.out.println("error" + ex.getMessage());
-        }
+    
+      @Override
+    public void start(Stage primaryStage) throws Exception {
+      try {
+        Parent root ;
+      
+            root = FXMLLoader.load(getClass().getResource("/gui/Afficherlivraison.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("");
+        primaryStage.setScene(scene);
+//        primaryStage.setFullScreen(true);
+        primaryStage.show();
+     } catch (IOException ex) {
+        System.out.println(ex.getMessage());        }
+    
     }
-
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+            
         launch(args);
     }
-
 }
+
+

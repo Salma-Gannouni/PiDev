@@ -15,5 +15,5 @@ public interface InterfacesLivreur {
      public void AjouterLivreur(Livreur v);   
     public void ModifierLivreur(Livreur v);
     public void SupprimerLivreur(int id);
-    public List<Livreur> RechercherLivreur(String noml);
+    public List<Livreur> RechercherLivreur(String region);
 }

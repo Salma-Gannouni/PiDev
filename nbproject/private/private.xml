@@ -3,18 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/pi/java/MainAjouter.java</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/gui/ajoutlivraison.css</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/.git/config</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/entities/Livraison.java</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/DAO/CRUDlivraison.java</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/gui/AjouterLivraison.fxml</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/entities/Livreur.java</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/gui/AfficheLivraisonController.java</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/gui/AjouterLivraisonController.java</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/test/DBConnection.java</file>
+            <file>file:/C:/Users/asus/Desktop/pi%20java/src/gui/AfficherlivraisonController.java</file>
+            <file>file:/C:/Users/asus/Desktop/pi%20java/src/gui/AfficherLivreurController.java</file>
+            <file>file:/C:/Users/asus/Desktop/pi%20java/src/pi/java/EspaceClient.java</file>
+            <file>file:/C:/Users/asus/Desktop/pi%20java/src/pi/java/EspaceAdmin.java</file>
             <file>file:/C:/Users/asus/Desktop/pi%20java/src/pi/java/PiJava.java</file>
-            <file>file:/C:/Users/asus/Desktop/pi%20java/src/DAO/CRUDlivreur.java</file>
         </group>
     </open-files>
 </project-private>

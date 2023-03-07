@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
-package gui;
+
+/**package gui;
 
 import DAO.CRUDlivraison;
 import entities.Livraison;
@@ -25,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author asus
  */
-public class AjouterLivraisonController implements Initializable {
+/**public class AjouterLivraisonController implements Initializable {
 
     @FXML
     private TextField nomTf;
@@ -43,13 +40,13 @@ public class AjouterLivraisonController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    @Override
+    /**@Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
     
-    private void affiche(ActionEvent event) {
+   /** private void affiche(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficheLivraison.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherLivraison.fxml"));
             Parent root = loader.load();
             AfficheLivraisonController controller = loader.getController();
             controller.setData(nomTf.getText()+ " " + etatTV.getText()+ " " + adresseTv.getText());
@@ -61,19 +58,18 @@ public class AjouterLivraisonController implements Initializable {
         
     }
     // button ajouter livraison
-    @FXML
+    /**@FXML
         private void ajout(ActionEvent event) {
             int id=Integer.parseInt(idProdTv.getText());
-            String nom=nomTf.getText(); 
             String etat=etatTV.getText();      
             String adresse=adresseTv.getText();
-            Livraison L = new Livraison(id,nom,adresse,etat);
+            Livraison L = new Livraison(id,adresse,etat,);
             ps.AjouterLivraison(L);
             System.out.println("Livraison ajouter avec succes");
     }
         @FXML
     private void Afficher(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AfficheLivraison.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AfficherLivraison.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -83,6 +79,6 @@ public class AjouterLivraisonController implements Initializable {
     }
 
 
+    **/
     
-    
-}
+

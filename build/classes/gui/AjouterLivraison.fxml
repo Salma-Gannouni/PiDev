@@ -25,7 +25,7 @@
       <TextField fx:id="etatTV" layoutX="67.0" layoutY="237.0" promptText="etat" />
       <TextField fx:id="adresseTv" layoutX="67.0" layoutY="187.0" promptText="adresse" />
       <TextField fx:id="idProdTv" layoutX="67.0" layoutY="278.0" promptText="id-produit" />
-      <Button fx:id="btn" layoutX="380.0" layoutY="135.0" mnemonicParsing="false" onAction="#ajout" prefHeight="30.0" prefWidth="144.0" text="Ajouter" />
-      <Button fx:id="btnAffiche" layoutX="380.0" layoutY="263.0" mnemonicParsing="false" onAction="#Afficher" prefHeight="30.0" prefWidth="144.0" text="Afficher" />
+      <Button fx:id="btn" layoutX="380.0" layoutY="172.0" mnemonicParsing="false" onAction="#ajout" prefHeight="30.0" prefWidth="144.0" text="Ajouter" />
+      <Button fx:id="btnAffiche" layoutX="380.0" layoutY="247.0" mnemonicParsing="false" onAction="#Afficher" prefHeight="30.0" prefWidth="144.0" text="Afficher" />
    </children>
 </AnchorPane>

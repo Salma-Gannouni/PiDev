@@ -5,6 +5,7 @@
 package services;
 
 import entities.Livraison;
+import entities.Livreur;
 import java.util.List;
 
 /**
@@ -15,6 +16,7 @@ public interface InterfaceLivraison {
      public void AjouterLivraison(Livraison L);   
     public void ModifierLivraison(Livraison L);
     public void SupprimerLivraison(int id);
-  public List<Livraison> RechercherLivraison(String nom);
   public List<Livraison> afficherLivraison();
+  public void affecterLivreur(Livraison L1, Livreur liv1);
+  public boolean validateEtat(int p);
 }

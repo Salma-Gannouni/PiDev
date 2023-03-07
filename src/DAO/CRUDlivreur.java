@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import services.InterfacesLivreur;
 import test.DBConnection;
 
@@ -25,7 +27,7 @@ public class CRUDlivreur implements InterfacesLivreur {
     Connection conn = DBConnection.getInstance();
  private final String INSERT_LIVREUR="Insert into livreur(`id`,`nom`,`prenom`,`tel`,`region`) values (NULL,?,?,?,?)";
 private final String DELETE_LIVREUR=" DELETE from `livreur` WHERE id= ?";
-private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE nom= ?";
+private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE region= ?";
 
       @Override
     public void AjouterLivreur(Livreur v) {
@@ -36,9 +38,7 @@ private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE nom= ?";
         req.setString(2,v.getPrenom());    
         req.setString(3,v.getTel());      
         req.setString(4,v.getRegion());       
-      
         req.executeUpdate();
-         
         System.out.println("livreur ajouté");
         }
         catch(SQLException ex){
@@ -77,19 +77,20 @@ private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE nom= ?";
             System.out.println(ex.getMessage());
         }
     }
-
-    @Override
-    public List<Livreur> RechercherLivreur(String noml) {
+     
+   @Override
+    public List<Livreur> RechercherLivreur(String region) {
         List<Livreur> livreur = new ArrayList<>();
         try{
             
             st= conn.createStatement();
             PreparedStatement req=conn.prepareStatement(RECHERCHE_LIVREUR);
-            req.setString(1,noml); 
+            req.setString(1,region); 
             ResultSet result =req.executeQuery();
             while(result.next()){
                 
                 livreur.add(new Livreur(
+                       result.getInt("id"),
                        result.getString("nom"),
                         result.getString("prenom"),
                         result.getString("tel"),
@@ -105,6 +106,7 @@ private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE nom= ?";
     
         return livreur;
     }
+   
      public List<Livreur> afficherlivreurs() {
     
         List<Livreur> livreur = new ArrayList<>();
@@ -115,6 +117,7 @@ private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE nom= ?";
             while(result.next()){
                 
                 livreur.add(new Livreur(
+                       result.getInt("id"),
                         result.getString("nom"),
                         result.getString("prenom"),
                         result.getString("tel"),
@@ -131,5 +134,7 @@ private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE nom= ?";
     
         return livreur;
     }
+
+  
     
 }

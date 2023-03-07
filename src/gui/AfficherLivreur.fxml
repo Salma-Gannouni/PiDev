@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficherLivreurController">
+    <stylesheets>
+        <URL value="@afficherlivreur.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="218.0" layoutY="21.0" text="Liste Livreurs">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TableView fx:id="livreurTv" layoutX="101.0" layoutY="140.0" onSort="#affiche" prefHeight="193.0" prefWidth="397.0">
+        <columns>
+          <TableColumn fx:id="idt" prefWidth="46.4000244140625" text="id" />
+          <TableColumn fx:id="nomt" prefWidth="88.800048828125" text="nom" />
+            <TableColumn fx:id="prenomt" prefWidth="105.5999755859375" text="prenom" />
+            <TableColumn fx:id="telt" prefWidth="73.60003662109375" text="tel" />
+            <TableColumn fx:id="regiont" prefWidth="83.2000732421875" text="region" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="comboRegion" layoutX="218.0" layoutY="75.0" prefWidth="150.0" />
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@afficherlivreur.css" />
+          </stylesheets>
+         <children>
+            <Label layoutX="218.0" layoutY="21.0" text="Liste Livreurs">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <TableView fx:id="livreurTv1" layoutX="101.0" layoutY="140.0" onSort="#affiche" prefHeight="193.0" prefWidth="397.0">
+              <columns>
+                <TableColumn fx:id="idt1" prefWidth="46.4000244140625" text="id" />
+                <TableColumn fx:id="nomt1" prefWidth="88.800048828125" text="nom" />
+                  <TableColumn fx:id="prenomt1" prefWidth="105.5999755859375" text="prenom" />
+                  <TableColumn fx:id="telt1" prefWidth="73.60003662109375" text="tel" />
+                  <TableColumn fx:id="regiont1" prefWidth="83.2000732421875" text="region" />
+              </columns>
+            </TableView>
+            <ComboBox fx:id="comboRegion1" layoutX="218.0" layoutY="75.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

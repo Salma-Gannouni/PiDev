@@ -5,6 +5,7 @@
 package DAO;
 
 import entities.Livraison;
+import entities.Livreur;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,9 +23,9 @@ import test.DBConnection;
 public class CRUDlivraison implements InterfaceLivraison {
  Statement st;
     Connection conn = DBConnection.getInstance();
-     private final String INSERT_LIVRAISON="INSERT INTO `livraison` VALUES (NULL,?,?,?,?);";
+     private final String INSERT_LIVRAISON="INSERT INTO `livraison` VALUES (NULL,?,?,?,?,?,?);";
       private final String DELETE_LIVRAISON=" DELETE from `livraison` WHERE id= ?";
-      private final String RECHERCHE_LIVRAISON=" SELECT * from `livraison` WHERE nom= ?";
+      private final String VALIDATE_LIVRAISON = "UPDATE livraison SET etat = 'livré' WHERE id = ?";
 
 
 
@@ -33,10 +34,13 @@ public class CRUDlivraison implements InterfaceLivraison {
         try {
         st= conn.createStatement();
         PreparedStatement req=conn.prepareStatement(INSERT_LIVRAISON);
-        req.setString(1,L.getNom());      
-        req.setString(2,L.getAdresse());    
-        req.setString(3,L.getEtat());  
-        req.setInt(4, L.getId_produit());
+        req.setString(1,L.getAdresse());    
+        req.setString(2,L.getEtat());        
+        req.setString(3,L.getNum());  
+        req.setInt(4,L.getId_user());  
+        req.setInt(5, L.getId_produit());  
+        req.setInt(6, L.getId_livreur());
+
         req.executeUpdate();
          
         System.out.println("livraison ajouté");
@@ -52,7 +56,7 @@ public class CRUDlivraison implements InterfaceLivraison {
     @Override
     public void ModifierLivraison(Livraison L) {
          try {
-            String req = "UPDATE `livraison` SET `nom` = '" + L.getNom() + "', `adresse` = '" + L.getAdresse()+ "', `etat` = '" + L.getEtat()+ "' WHERE "
+            String req = "UPDATE `livraison` SET  `adresse` = '" + L.getAdresse()+ "', `etat` = '" + L.getEtat()+ "' WHERE "
                     + "`id` = " + L.getId();
             Statement st = conn.createStatement();
             st.executeUpdate(req);
@@ -78,34 +82,7 @@ public class CRUDlivraison implements InterfaceLivraison {
         }
     }
 
-    @Override
-     public List<Livraison> RechercherLivraison(String nom){
-           List<Livraison> livraison = new ArrayList<>();
-        try{
-            
-            st= conn.createStatement();
-            PreparedStatement req=conn.prepareStatement(RECHERCHE_LIVRAISON);
-            req.setString(1,nom); 
-            ResultSet result =req.executeQuery();
-            while(result.next()){
-                
-                livraison.add(new Livraison(
-                        result.getInt("id"),
-                        result.getString("nom"),
-                        result.getString("adresse"),
-                        result.getString("etat")));
-                
-            }
-            
-            System.out.println(livraison);
-        }catch(SQLException ex){
-            System.out.println(ex);
-            
-        }
     
-        return livraison;
-         
-     }
 
     @Override
     public List<Livraison> afficherLivraison() {
@@ -117,10 +94,12 @@ public class CRUDlivraison implements InterfaceLivraison {
             while(result.next()){
                 livraison.add(new Livraison(
                         result.getInt("id"),
-                         result.getInt("id_produit"),
-                        result.getString("nom"),
-                        result.getString("adresse"),
-                        result.getString("etat")));  
+                        result.getInt("id_produit"), 
+                        result.getInt("id_user"),  
+                        result.getInt("id_livreur"),
+                        result.getString("adresse"),         
+                        result.getString("etat"),
+                        result.getString("num")));  
 
 
                 
@@ -136,4 +115,45 @@ public class CRUDlivraison implements InterfaceLivraison {
 
     }
     
+    @Override
+    public void affecterLivreur(Livraison L, Livreur v) {
+        
+     {
+        try{
+            
+         String req="UPDATE `livraison` SET id_livreur =  ? WHERE id= ? ;";
+            PreparedStatement stmt=conn.prepareStatement(req);
+            stmt.setInt(1, v.getId());
+         stmt.setInt(2, L.getId());
+        stmt.executeUpdate();
+            System.out.println("Livreur effectué");
+        
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+         
+    
+    }
+
+    }
+ @Override
+     public boolean validateEtat(int p) {
+        
+        try {
+            st = conn.createStatement();
+            PreparedStatement stmt = conn.prepareStatement(VALIDATE_LIVRAISON);
+            
+            stmt.setInt(1,p);
+            stmt.execute();
+            return true;
+        }catch(SQLException sQLException){
+            System.out.println(sQLException.getMessage());
+        }catch(IllegalArgumentException illegalArgumentException){
+            System.out.println(illegalArgumentException.getMessage());
+        }catch(NullPointerException nullPointerException){
+            System.out.println(nullPointerException.getMessage());
+        }
+        return false;
+    }
 }
+
