@@ -33,7 +33,6 @@ import javafx.scene.layout.AnchorPane;
  */
 public class AfficherLivreurController implements Initializable {
        
-    CRUDlivreur cd = new CRUDlivreur();
     @FXML
     private TableView<Livreur> livreurTv1;
     @FXML
@@ -49,6 +48,8 @@ public class AfficherLivreurController implements Initializable {
     @FXML
     private ComboBox<String>  comboRegion1;
       private String combo ;
+   
+
     
 
         
@@ -64,12 +65,22 @@ public class AfficherLivreurController implements Initializable {
                 combo = comboRegion1.getSelectionModel().getSelectedItem();
                 System.out.println(combo);
       CRUDlivreur  cdLiv = new CRUDlivreur();
-      cdLiv.RechercherLivreur(combo);
-        affiche();
+    ObservableList<Livreur> listeLivreurs= cdLiv.RechercherLivreur(combo);
+    ObservableList<Livreur> livreurs = FXCollections.observableArrayList(listeLivreurs);
+            idt1.setCellValueFactory(new PropertyValueFactory("id"));
+        nomt1.setCellValueFactory(new PropertyValueFactory("nom"));
+        prenomt1.setCellValueFactory(new PropertyValueFactory("prenom"));      
+        telt1.setCellValueFactory(new PropertyValueFactory("tel"));      
+        regiont1.setCellValueFactory(new PropertyValueFactory("region"));   
+       livreurTv1.setItems(FXCollections.observableArrayList(livreurs));
+
+
 
     }  );}
- 
-    @FXML
+
+   
+
+    /**@FXML
      public void affiche(){
        livreurTv1.setItems(FXCollections.observableArrayList(cd.afficherlivreurs()));
         idt1.setCellValueFactory(new PropertyValueFactory("id"));
@@ -92,7 +103,7 @@ public class AfficherLivreurController implements Initializable {
 		        return myRow;
                    });
       }
-
+**/
 
     
 }

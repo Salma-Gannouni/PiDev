@@ -26,7 +26,6 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import test.DBConnection;
 
 /**
@@ -140,7 +139,7 @@ public class AfficherlivraisonController implements Initializable {
     @FXML
     private void Affecter(ActionEvent event) throws IOException {
        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AfficherLivreur.fxml"));  
-          FXMLLoader loader = new FXMLLoader (getClass().getResource("/gui/AfficherLivreur.fxml"));
+          FXMLLoader loader = new FXMLLoader (getClass().getResource("/gui/AfficheLivreur.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

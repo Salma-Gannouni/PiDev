@@ -27,7 +27,7 @@ public class CRUDlivreur implements InterfacesLivreur {
     Connection conn = DBConnection.getInstance();
  private final String INSERT_LIVREUR="Insert into livreur(`id`,`nom`,`prenom`,`tel`,`region`) values (NULL,?,?,?,?)";
 private final String DELETE_LIVREUR=" DELETE from `livreur` WHERE id= ?";
-private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE region= ?";
+//private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE region= ?";
 
       @Override
     public void AjouterLivreur(Livreur v) {
@@ -78,36 +78,36 @@ private final String RECHERCHE_LIVREUR=" SELECT * from `livreur` WHERE region= ?
         }
     }
      
-   @Override
-    public List<Livreur> RechercherLivreur(String region) {
-        List<Livreur> livreur = new ArrayList<>();
-        try{
-            
-            st= conn.createStatement();
-            PreparedStatement req=conn.prepareStatement(RECHERCHE_LIVREUR);
-            req.setString(1,region); 
-            ResultSet result =req.executeQuery();
-            while(result.next()){
-                
-                livreur.add(new Livreur(
-                       result.getInt("id"),
-                       result.getString("nom"),
-                        result.getString("prenom"),
-                        result.getString("tel"),
-                        result.getString("region")));
-                
-            }
-            
-            System.out.println(livreur);
-        }catch(SQLException ex){
-            System.out.println(ex);
-            
+       public ObservableList<Livreur> RechercherLivreur(String combo){
+                   ObservableList<Livreur> livreurs=FXCollections.observableArrayList();
+                       
+        try {
+        String requete = "SELECT * from `livreur` WHERE region= ? ";
+        PreparedStatement req=conn.prepareStatement(requete);
+        req.setString(1, combo); // Modification de l'index de 0 à 1
+        ResultSet result =req.executeQuery();
+        
+        while (result.next()) {
+            livreurs.add(new Livreur(
+                result.getInt("id"),     
+                result.getString("nom"),
+                    result.getString("prenom"),
+                    result.getString("tel"),     
+                    result.getString("region")
+
+            ));
         }
-    
-        return livreur;
+        
+        System.out.println(livreurs);
+    } catch(SQLException ex) {
+        System.out.println(ex);
     }
+    return livreurs;
+
+       }
+
    
-     public List<Livreur> afficherlivreurs() {
+   public List<Livreur> afficherlivreurs() {
     
         List<Livreur> livreur = new ArrayList<>();
         try{

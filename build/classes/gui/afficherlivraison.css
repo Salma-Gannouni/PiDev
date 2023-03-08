@@ -4,4 +4,24 @@
 
 .mainFxmlClass {
 
+    .anchor-pane {
+    -fx-background-color: #FEDF9B;
+}
+.root {
+    -fx-background-color: #FEDF9B;
+}
+    
+.button {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-color: #1ABC9C;
+    -fx-text-fill: #ffffff;
+}
+
+.label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1ABC9C;
+}
+
 }

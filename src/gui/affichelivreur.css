@@ -3,7 +3,7 @@
  */
 
 .mainFxmlClass {
-    .anchor-pane {
+  .anchor-pane {
     -fx-background-color: #FEDF9B;
 }
 .root {

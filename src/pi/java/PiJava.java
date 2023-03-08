@@ -71,8 +71,8 @@ public class PiJava {
      //cd.ModifierLivreur(liv1);
       cd.RechercherLivreur("raoued");
      //cd.SupprimerLivreur(0);
-     cd.afficherlivreurs();
-    crud.affecterLivreur(L2, liv1);
+    // cd.afficherlivreurs();
+    //crud.affecterLivreur(L2, liv1);
 
      
   /**      String to = "matrouh.ranya.11@gmail.com";

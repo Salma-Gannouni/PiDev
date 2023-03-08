@@ -8,29 +8,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficherlivraisonController">
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="710.0" 
+         
+            styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficherlivraisonController">
     <stylesheets>
         <URL value="@afficherlivraison.css" />
     </stylesheets>
    <children>
-      <Label layoutX="231.0" layoutY="14.0" text="Liste Livraisons">
+      <Label layoutX="284.0" layoutY="48.0" text="Liste Livraisons">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <TableView fx:id="livraisonTv" layoutX="38.0" layoutY="57.0" prefHeight="254.0" prefWidth="523.0">
+      <TableView fx:id="livraisonTv" layoutX="39.0" layoutY="90.0" prefHeight="310.0" prefWidth="646.0" style="    -fx-background-color: #FEDF9B;" >
         <columns>
           <TableColumn fx:id="idTv" prefWidth="75.0" text="id" />
           <TableColumn fx:id="adresseTv" prefWidth="75.0" text="adresse" />
             <TableColumn fx:id="etatTv" prefWidth="75.0" text="etat" />
             <TableColumn fx:id="numTv" prefWidth="75.0" text="num" />
-            <TableColumn fx:id="idUserTv" prefWidth="75.0" text="id_user" />
-            <TableColumn fx:id="idProTv" prefWidth="75.0" text="id_produit" />
-            <TableColumn fx:id="idLiv" prefWidth="75.0" text="id_livreur" />
+            <TableColumn fx:id="idUserTv" prefWidth="103.99993896484375" text="id_user" />
+            <TableColumn fx:id="idProTv" prefWidth="139.20001220703125" text="id_produit" />
+            <TableColumn fx:id="idLiv" prefWidth="101.5999755859375" text="id_livreur" />
         </columns>
       </TableView>
-      <Button fx:id="btnValider" layoutX="138.0" layoutY="342.0" mnemonicParsing="false" onAction="#valider_etat" prefHeight="31.0" prefWidth="71.0" text="valider" />
-      <Button fx:id="btnSupprimer" layoutX="285.0" layoutY="342.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="71.0" text="Supprimer" />
-      <Button fx:id="btnAffecter" layoutX="412.0" layoutY="342.0" mnemonicParsing="false" onAction="#Affecter" prefHeight="31.0" prefWidth="71.0" text="Affecter" />
+      <Button fx:id="btnValider" layoutX="82.0" layoutY="431.0" mnemonicParsing="false" onAction="#valider_etat" prefHeight="43.0" prefWidth="119.0" text="valider" />
+      <Button fx:id="btnSupprimer" layoutX="275.0" layoutY="430.0" mnemonicParsing="false" onAction="#delete" prefHeight="43.0" prefWidth="150.0" text="Supprimer" />
+      <Button fx:id="btnAffecter" layoutX="507.0" layoutY="430.0" mnemonicParsing="false" onAction="#Affecter" prefHeight="30.0" prefWidth="130.0" text="Affecter" />
    </children>
 </AnchorPane>
